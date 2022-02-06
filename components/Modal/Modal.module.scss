@@ -33,12 +33,15 @@
 
 /* The Close Button */
 .close {
+  border: 0;
   color: #aaa;
+  background: none;
   position: absolute;
   top: 15px;
   right: 15px;
   font-size: 28px;
   font-weight: bold;
+  transition: transform 100ms ease-in-out;
 }
 
 .close:hover,
@@ -46,4 +49,5 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+  transform: scale(1.1)
 }

@@ -29,7 +29,7 @@ return (
     <section className={styles.bookShelf}>
         <div className={`${styles.headerRow} row`}>
             <h1>Bookshelf</h1>
-            <button className='btn-green' onClick={e=>setShowForm(true)}>Add book</button>
+            <button type="button" className='btn-green' onClick={e=>setShowForm(true)}>Add book</button>
         </div>
         <div className={`${styles.booksRow} row`}>
             {books && books.map(book =>{
@@ -42,7 +42,7 @@ return (
                         <small>{book.author}</small>
                         <p>{book.description}</p>
                     </div>
-                    <button onClick={e=>deleteBook(book.id)} disabled={isDeleting}>
+                    <button type="button" onClick={e=>deleteBook(book.id)} disabled={isDeleting}>
                         {deletingThis ? <Spinner /> : <Image src='/trash.svg' alt='Delete book' width={21} height={21} />}
                     </button>
                 </div>
@@ -58,3 +58,4 @@ return (
 )
     
 }
+export default Bookshelf

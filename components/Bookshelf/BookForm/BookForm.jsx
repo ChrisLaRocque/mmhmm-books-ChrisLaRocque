@@ -67,3 +67,4 @@ export function BookForm({setBooks}){
       </div>
     );
 }
+export default BookForm

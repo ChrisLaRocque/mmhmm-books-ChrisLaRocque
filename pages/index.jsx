@@ -1,24 +1,13 @@
 import Head from 'next/head'
-// import Image from 'next/image'
 import React, {useState, useEffect} from 'react'
 import { Bookshelf } from '../components/Bookshelf/Bookshelf'
 
-import styles from '../styles/Home.module.scss'
-
-const errors = {
-  'delete': 'Whoops, something went wrong deleting that book.',
-  'post': 'Whoops, we couldn&apos;t add that book for some reason. Please try again.'
-}
 
 export default function Home() {
   const [books, setBooks] = useState(null)
-
-  // This level of specificity could probably be refined
-  const [isLoading, setLoading] = useState(false)
   
   // fetch all books
   function fetchBooks(){
-    setLoading(true)
     fetch('https://us-central1-all-turtles-interview.cloudfunctions.net/books', {
       method: 'get', 
       headers: new Headers({
@@ -27,7 +16,6 @@ export default function Home() {
     .then((res) => res.json())
     .then((data) => {
       setBooks(data)
-      setLoading(false)
     })
   }
 
@@ -36,7 +24,6 @@ export default function Home() {
     fetchBooks()
   }, []);
 
-  // if (isLoading) return <p>Loading...</p>
   return (
     <>
       <Head>
@@ -46,7 +33,7 @@ export default function Home() {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      <div className={styles.pageWrapper}>
+      <div>
         <Bookshelf books={books} setBooks={setBooks}/> 
       </div>
     </>
