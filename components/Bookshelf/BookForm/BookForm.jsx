@@ -20,7 +20,7 @@ export function BookForm({setBooks}){
           setPosting(false)
           if(res.status === 200){
             setShowSuccess(bookInfo.title)
-            setTimeout(() => {setShowSuccess('')}, 5000);
+            setTimeout(() => {setShowSuccess('')}, 5000); // Hide success message after 5 seconds
           }
           return res.json()
         }).then((data)=> {

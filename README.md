@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Chris LaRocque mmhmm take home
 
-## Getting Started
+## Setup 
+Standard `create-next-app` implementation. I'm using node v14.18.1. Should be able to `nvm use 14.18.1 && npm install && npm run dev` to see the page at `localhost:3000`.
 
-First, run the development server:
+## Directory structure
+### /components
+While not necessarily _ideal_, I put the API calls within the component whose state depended on them most closely for the sake of not passing getters + setters everywhere or having to veer too far outside the scope of the ask and start setting up context providers.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Components have an accompanying `COMPONENT_NAME.module.scss` file for their styles. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### BookShelf
+*BookShelf.jsx*
+Main parent component for list and BookForm. Takes `books` and `setBooks` and displays the list + form.
+*BookForm*
+The basic form + API call to add a book to the list.
+#### Modal
+Straight from w3schools.com and tweaked - https://www.w3schools.com/howto/howto_css_modals.asp.
+#### Spinner
+Initially was expecting to call this several places but currently just for loading state for deleting a book.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### /pages
+#### _app.js
+Boilerplate next wrapper for app, calls `global.scss`.
+#### index.js
+Boilerplate next wrapper for homepage. Does initial `fetchBooks()` call and passes to `BookShelf` component
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### /public
+SVGs and favicons
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### /styles
+#### breakpoints.scss
+Phone and tablet max-width mixins used in component `.module.scss` files.
+#### globals.scss
+Boilerplate from next plus 2 small helpers for `section` elements and their children.
 
-## Learn More
+### next.config.js
+Only change here was accounting for the picsum.photos host when using `next/image`.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

@@ -19,7 +19,7 @@ a {
 
 // Bookshelf + bookform are sections
 section {
-  max-width: 768px;
+  max-width: 768px; // Mock seemed to max out at ~600
   margin: 0 auto;
   padding-top: 50px;
   .row {
