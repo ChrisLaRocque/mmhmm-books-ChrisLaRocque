@@ -4,25 +4,7 @@ import { Bookshelf } from '../components/Bookshelf/Bookshelf'
 
 
 export default function Home() {
-  const [books, setBooks] = useState(null)
-  
-  // fetch all books
-  function fetchBooks(){
-    fetch('https://us-central1-all-turtles-interview.cloudfunctions.net/books', {
-      method: 'get', 
-      headers: new Headers({
-        'Authorization': 'chrislarocque', 
-    }), })
-    .then((res) => res.json())
-    .then((data) => {
-      setBooks(data)
-    })
-  }
 
-  // Load the list of books on render
-  useEffect(() => {
-    fetchBooks()
-  }, []);
 
   return (
     <>
@@ -34,7 +16,7 @@ export default function Home() {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <div>
-        <Bookshelf books={books} setBooks={setBooks}/> 
+        <Bookshelf /> 
       </div>
     </>
   )

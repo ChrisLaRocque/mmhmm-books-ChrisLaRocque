@@ -14,10 +14,10 @@ While not necessarily _ideal_, I put the API calls within the component whose st
 Components have an accompanying `COMPONENT_NAME.module.scss` file for their styles. 
 
 #### BookShelf
-*BookShelf.jsx*
-Main parent component for list and BookForm. Takes `books` and `setBooks` and displays the list + form.
+*BookShelf.jsx*<br>
+Main parent component for list and BookForm. Fetches the initial book list on page load and displays it.
 
-*BookForm*
+*BookForm*<br>
 The basic form + API call to add a book to the list.
 
 #### Modal
@@ -30,7 +30,7 @@ Initially was expecting to call this several places but currently just for loadi
 #### _app.js
 Boilerplate next wrapper for app, calls `global.scss`.
 #### index.js
-Boilerplate next wrapper for homepage. Does initial `fetchBooks()` call and passes to `BookShelf` component
+Boilerplate next wrapper for homepage, calls the `<Bookshelf />` component.
 
 ### /public
 SVGs and favicons
