@@ -1,0 +1,17 @@
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 576px;
+$screen-tablet-max: 768px;
+
+// Small devices
+@mixin sm {
+   @media (max-width: #{$screen-sm-max}) {
+       @content;
+   }
+}
+
+// Tablets
+@mixin tablet {
+   @media (max-width: #{$screen-tablet-max}) {
+       @content;
+   }
+}
