@@ -9,7 +9,14 @@ import { Spinner } from '../Spinner/Spinner'
 export function Bookshelf({books, setBooks}){
     const [showForm, setShowForm] = useState(false)
     const [isDeleting, setDeleting] = useState(false)
-    
+
+    // Close form modal w/escape key
+    document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape'){
+            setShowForm(false)
+        }
+    });
+
     // Delete book
     function deleteBook(bookId){
         setDeleting(bookId)

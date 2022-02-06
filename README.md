@@ -16,10 +16,13 @@ Components have an accompanying `COMPONENT_NAME.module.scss` file for their styl
 #### BookShelf
 *BookShelf.jsx*
 Main parent component for list and BookForm. Takes `books` and `setBooks` and displays the list + form.
+
 *BookForm*
 The basic form + API call to add a book to the list.
+
 #### Modal
 Straight from w3schools.com and tweaked - https://www.w3schools.com/howto/howto_css_modals.asp.
+
 #### Spinner
 Initially was expecting to call this several places but currently just for loading state for deleting a book.
 
