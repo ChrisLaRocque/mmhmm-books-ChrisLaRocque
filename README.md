@@ -1,4 +1,8 @@
 # Chris LaRocque mmhmm take home
+[![Netlify Status](https://api.netlify.com/api/v1/badges/11b845a9-2463-4101-ac0a-30040f4b6acc/deploy-status)](https://app.netlify.com/sites/mmhmm-chrislarocque/deploys)
+
+https://mmhmm-chrislarocque.netlify.app/
+
 
 ## Setup 
 Standard `create-next-app` implementation. I'm using node v14.18.1. Should be able to `nvm use 14.18.1 && npm install && npm run dev` to see the page at `localhost:3000`.
