@@ -63,6 +63,7 @@ export function Bookshelf(){
                 <button type="button" className='btn-green' onClick={e=>setShowForm(true)}>Add book</button>
             </div>
             <div className={`${styles.booksRow} row`}>
+                {/* {books && <div>{`${books.length} books`}</div>} */}
                 {loadingBooks ? <div>Loading your bookshelf...</div> :(
                     <>
                     {books && books.map(book =>{
