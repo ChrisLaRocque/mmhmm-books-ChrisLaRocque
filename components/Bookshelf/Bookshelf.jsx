@@ -70,7 +70,7 @@ export function Bookshelf(){
                         const deletingThis = isDeleting === book.id
                         return (
                             <div className={`${styles.book} ${deletingThis ? styles.inactive : ''}`} key={book.id}>
-                                <Image width={125} height={200} src={book.imageUrl} alt={`Book cover for ${book.title}`} className="book-image" />
+                                <Image width={125} height={200} src={book.imageUrl} alt={`Book cover for ${book.title}`} className={styles.bookImage} />
                                 <div className={styles.bookTextContainer}>
                                     <strong>{book.title}</strong>
                                     <small>{book.author}</small>

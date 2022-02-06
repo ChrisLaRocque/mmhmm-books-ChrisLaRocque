@@ -1,6 +1,14 @@
 // Small tablets and large smartphones (landscape view)
+$screen-xs-max: 375px;
 $screen-sm-max: 576px;
 $screen-tablet-max: 768px;
+
+// xs devices
+@mixin xs {
+   @media (max-width: #{$screen-xs-max}) {
+       @content;
+   }
+}
 
 // Small devices
 @mixin sm {
