@@ -2,7 +2,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/11b845a9-2463-4101-ac0a-30040f4b6acc/deploy-status)](https://app.netlify.com/sites/mmhmm-chrislarocque/deploys)
 
 ## Links
-Live page: https://mmhmm-chrislarocque.netlify.app/
+Live page: https://mmhmm-chrislarocque.netlify.app/<br>
 Video overview: https://drive.google.com/file/d/1fM3UD5YBsb0Tyb9s-WgOGNc-OC35hDbY/view?usp=sharing
 
 ## Setup 
