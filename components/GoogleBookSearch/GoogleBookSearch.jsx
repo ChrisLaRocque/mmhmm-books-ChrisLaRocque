@@ -35,13 +35,14 @@ export function GoogleBookSearch({setBooks}){
             const itemsToBookObjs = items.map(({id, volumeInfo})=>{
                 const {title, description, authors, imageLinks } = volumeInfo
                 const author = authors.join(', ')
+
                 const imageUrl = imageLinks ? imageLinks.smallThumbnail : 'https://picsum.photos/125/200'
                 return {
                     title,
                     author,
                     imageUrl,
                     description: description ? `${description.substring(0, 262)}...` : '',
-                    id
+                    googleId: id,
                 }
             })
             setIsSearching(false)
@@ -78,9 +79,9 @@ export function GoogleBookSearch({setBooks}){
             </div>
             <div className='searchResults'>
                 {results && results.map(result => {
-                    const { title, description, author, imageUrl, id } = result
+                    const { title, description, author, imageUrl, googleId } = result
                     return(
-                        <div key={id} className={styles.result}>
+                        <div key={googleId} className={styles.result}>
                             <div style={{display: 'flex'}}>
                                 <Image src={imageUrl} width={125} height={200}/>
                                 <div className={styles.resultText} style={{maxWidth: '66%'}}>
