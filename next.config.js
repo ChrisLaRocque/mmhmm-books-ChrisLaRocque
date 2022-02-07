@@ -1,7 +1,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['picsum.photos'],
+    domains: ['picsum.photos', 'books.google.com'],
   },
    eslint: {
     // Warning: This allows production builds to successfully complete even if

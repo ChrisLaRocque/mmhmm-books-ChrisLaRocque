@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
 import styles from './Bookshelf.module.scss'
 import { BookForm } from './BookForm/BookForm'
+import { GoogleBookSearch } from '../GoogleBookSearch/GoogleBookSearch'
 import { Modal } from '../Modal/Modal'
 import { Spinner } from '../Spinner/Spinner'
 
@@ -10,9 +11,9 @@ export function Bookshelf(){
     const [books, setBooks] = useState(null)
     const [loadingBooks, setLoadingBooks] = useState(true)
     const [showForm, setShowForm] = useState(false)
+    const [showSearch, setShowSearch] = useState(true)
     const [isDeleting, setDeleting] = useState(false)
 
-  
     // fetch all books
     function fetchBooks(){
         fetch('https://us-central1-all-turtles-interview.cloudfunctions.net/books', {
@@ -61,6 +62,7 @@ export function Bookshelf(){
             <div className={`${styles.headerRow} row`}>
                 <h1>Bookshelf</h1>
                 <button type="button" className='btn-green' onClick={e=>setShowForm(true)}>Add book</button>
+                <button type="button" className='btn-green' onClick={e=>setShowSearch(true)}>Search books</button>
             </div>
             <div className={`${styles.booksRow} row`}>
                 {/* {books && <div>{`${books.length} books`}</div>} */}
@@ -87,6 +89,9 @@ export function Bookshelf(){
             </div>
             <Modal trigger={showForm} setter={setShowForm}>
                 <BookForm setBooks={setBooks}  />
+            </Modal>
+            <Modal trigger={showSearch} setter={setShowSearch}>
+                <GoogleBookSearch setBooks={setBooks} />
             </Modal>
         </section>
     )
